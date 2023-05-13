@@ -1,0 +1,75 @@
+<!-- 
+Name: Kai Yu Man
+StudentID: 162280218
+SenecaEmail: kman2@myseneca.ca
+Date: Feb 5, 2023
+Description: Assignment 2
+Course: WEB322
+Professor: Ms. Jenelle Chen 
+-->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        
+        <title>Pay for Parking</title>
+
+        <!-- Self CSS stylesheet -->
+        <link rel="stylesheet" href="mystyle.css"> 
+
+        <!-- Google Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Exo+2:wght@600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet"> 
+
+        <nav>
+            <div class="navBar center">
+                <a href="/">Home</a>   <!-- used / instead of index.html, as defined in server.js endpoint -->
+                <a href="admin">Admin</a>
+              </div> 
+        </nav>
+    </head>
+
+    <body>
+        <h1 class="center">Pay For Parking</h1>
+        <p class="center">Please pay for parking. Otherwise, the vehicle will be ticketed and towed away.</p>
+
+        <form action="/parking-receipt" method="POST">
+            
+            <div class="flexContainer">
+                <label for="lot" class="flexItem">Select parking lot:</label>
+                <select name ="lot" class="flexItem" >
+                    <option value="A">Lot A (uncovered) $3</option>
+                    <option value="B">Lot B (covered) $10</option>
+                    <option value="C">Lot C (multi-level) $5</option>
+                </select>
+            </div>
+
+            <div class="flexContainer">
+                <label for="hours" class="flexItem">Hours of parking:</label>
+                <input name="hours" class="flexItem" type="text" placeholder="1 to 8 Hour(s)">
+            </div>
+
+            <div class="flexContainer">
+                <label for="license" class="flexItem">License plate:</label>
+                <input name="license" class="flexItem" type="text" placeholder="Your license plate">
+            </div>
+
+            <div class="center">
+                <br>
+                <input type="submit" value="Pay" class="button">
+                <input type="reset" value="Clear" class="button">
+            </div>
+
+        </form>
+
+
+        <!-- JavaScript File -->
+        <script src="./js/server.js"></script>
+
+    </body>
+
+
+</html>
